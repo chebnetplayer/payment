@@ -1,0 +1,16 @@
+services:
+  service:
+    image: service
+    container_name: service
+    build:
+      dockerfile: Dockerfile
+      context: ./
+    ports:
+      - "8081:8081"
+  db:
+    image: postgres
+    container_name: my-postgres
+    environment:
+      POSTGRES_PASSWORD: 12345
+    ports:
+      - 5434
